@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BONSAIーいのちの螺旋| 出会う</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="../js/jquery-fatNav-master/dist/jquery.fatNav.css">
+<link rel="stylesheet"  href="../js/slick-master/slick/slick.css"/>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<!-- Googlematerial&yymbols -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=open_in_new" />
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+<!-- jQuery Modal (JSはjQueryの後に読み込む必要があります) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+<!--ready関数-->
+<script>
+$(function() {
+    $.fatNav();
+});
+$(function(){
+  //.accordion_oneの中の.accordion_headerがクリックされたら
+  $('.s_01 .accordion_one .accordion_header').click(function(){
+    //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
+    $(this).next('.accordion_inner').slideToggle();
+    $(this).toggleClass("open");
+  });
+});
+</script>
+
+</head>
+
+<body>
+<div class="wrap_top">
+    <div class="head">
+        <nav class="fat-nav">
+            <div class="fat-nav__wrapper">
+                <ul>
+                    <li><a href="../top/index.html">TOP</a></li>
+                    <li><a href="../kaitai/index.html">解体新書</a></li>
+                    <li><a href="../zukan/index.html">図鑑</a></li>
+                    <li><a href="../rekishi/index.html">宿る歴史</a></li>
+                    <li><a href="../spot/index.html">出会う</a></li>
+                    <li><a href="../shindan/index.html">BONSAI DNA診断</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="copy">
+            <h2>BONSAIに出会う</h2>
+        </div>
+        <section class="lead">
+            <div class="leadtxt">
+                <p>盆栽を楽しむことができる場所は日本各地にある。<br>
+                    中でも、盆栽の聖地と呼ばれるほど盆栽と密接に関係してきて地域や、<br>
+                    盆栽をテーマにした美術館なども存在する。<br>
+                    ここでは、特に盆栽文化が盛んな3つの地域をはじめ、<br>
+                    日本各地で盆栽に出会える場所を紹介。</p>
+            </div>
+        </section>
+    </div>
+</div>
+
+<main>
+    <div class="wrap_spot">
+        <div class="chizu">
+            <img src="../img/nihonchizu.png" alt="日本地図">
+            <div class="click">
+                <!-- Link to open the modal -->
+                <a href="#saitama" rel="modal:open"><div class="spot_btn1">CLICK</div></a>
+                <a href="#takamatsu" rel="modal:open"><div class="spot_btn2">CLICK</div></a>
+                <a href="#tokyo" rel="modal:open"><div class="spot_btn3">CLICK</div></a>
+            </div>
+        </div>
+    </div>
+<!-- Modal HTML embedded directly into document -->
+<div id="saitama" class="modal">
+    <div class="modalbox">
+            <h3>盆栽の聖地、さいたま市大宮</h3>
+            <p>盆栽を語るうえで外せないのが、埼玉県さいたま市の大宮地区。<br>
+                関東大震災を機に東京の盆栽職人たちが、盆栽育成に適した土地を求めて大宮地区に移住したことから始まり、以降盆栽の聖地と呼ばれている。<br>
+                街全体が盆栽の村になっており、盆栽をテーマにしたカフェや美術館が点在。盆栽村の中には無料で自由に見学できる盆栽園もあり、気軽に盆栽を楽しむことができる。</p>
+    </div>
+    <h3>BONSAI SPOTS</h3>
+    <div class="spots">
+            <div class="spot1">
+                <img src="../img/saitama.png" alt="さいたま市大宮盆栽美術館の画像">
+                <h3>さいたま市大宮盆栽美術館</h3>
+                <p>公立として世界初の盆栽に特化した美術館。さいたま市の伝統産業にも指定されている盆栽の文化発信のため、盆栽だけでなく鉢や水石、盆栽が描かれた絵画作品など、盆栽にまつわるさまざまな展示をしている。</p>
+                <a href="https://www.bonsai-art-museum.jp/ja/" target="_blank" rel="noopener noreferrer">さいたま市大宮盆栽美術館 公式サイト<span class="material-symbols-outlined">open_in_new</span></a>
+            </div>
+            <div class="spot2">
+                <img src="../img/shikinoie.png" alt="盆栽四季の家の画像">
+                <h3>盆栽四季の家</h3>
+                <p>東角井光臣家（武蔵一宮氷川神社宮司）の邸宅の一部を移築復元して作られた和風建築で、盆栽村周辺を観光した人々が休憩する憩いの場。</p>
+            </div>
+        </div>
+    <a href="#" rel="modal:close">Close</a>
+</div>
+<div id="takamatsu" class="modal">
+    <div class="modalbox">
+        <h3>松盆栽の生産量日本一、香川県高松市</h3>
+        <p>国内の松盆栽のシェア8割を占める、日本最大の盆栽産地である香川県高松市。<br>
+            江戸時代後期から黒松を使用した盆栽栽培が始まり、現在に至るまで多くの盆栽園が集まっている。<br>
+            近年では観光としての盆栽に力を入れており、香川県がうどんだけでないアピールに、盆栽イベントなども開催されている。</p>
+    </div>
+    <h3>BONSAI SPOTS</h3>
+    <div class="spots">
+        <div class="spot1">
+            <img src="../img/setouchi.png" alt="せとうち盆栽庭園美術館の画像">
+            <h3>せとうち盆栽庭園美術館</h3>
+            <p>盆栽の郷と呼ばれる高松市国分寺町に開館された盆栽美術館。高松市内の盆栽観光のランドマークにと設立され、庭園のような広々とした空間に優雅な盆栽が並ぶ。</p>
+            <a href="https://bonsai-art-museum.com/" target="_blank" rel="noopener noreferrer">せとうち盆栽庭園美術館 公式サイト<span class="material-symbols-outlined">open_in_new</span></a>
+        </div>
+        <div class="spot2">
+            <img src="../img/ritsurin.png" alt="特別名勝 栗林公園の画像">
+            <h3>特別名勝 栗林公園</h3>
+            <p>東京ドーム約3.5個分もの広さを誇る文化財庭園。盆栽ではないが、庭園には約1000本もの手入れ松があり、樹齢300年と言われる「鶴亀松」や、江戸時代将軍から賜ったという「根上五葉松」の風格は、盆栽に通じるものがある。</p>
+        </div>
+    </div>
+  <a href="#" rel="modal:close">Close</a>
+</div>
+<div id="tokyo" class="modal">
+    <div class="modalbox">
+        <h3>東京都心で味わう、モダン盆栽</h3>
+        <p>東京では古くからの盆栽品評会が開催されるだけでなく、近年ではデザイン性の高い盆栽の展示や、体験重視のスポットが集まっている。<br>
+            盆栽をテーマにしたモダンなカフェや、実際の盆栽の手入れを体験するワークショップなど。<br>
+            都会の喧騒の中で、静けさと力強さを併せ持った盆栽の精神が再評価されている。</p>
+    </div>
+    <h3>BONSAI SPOTS</h3>
+    <div class="spots">
+        <div class="spot1">
+            <img src="../img/sunkaen.png" alt="春花園BONSAI美術館の画像">
+            <h3>春花園BONSAI美術館</h3>
+            <p>日本を代表する盆栽作家・小林國雄氏が江戸川区に開館した盆栽美術館。建物や庭の随所に日本情緒が感じられ、美術館全体で四季折々の美しさを楽しむことができる。館内では盆栽体験だけでなく、茶の湯体験や着付け体験もできる。</p>
+            <a href="https://kunio-kobayashi.com/" target="_blank" rel="noopener noreferrer">春花園BONSAI美術館 公式サイト<span class="material-symbols-outlined">open_in_new</span></a>
+        </div>
+        <div class="spot2">
+            <img src="../img/bonsaicoffee.png" alt="BONSAI COFFEEの画像">
+            <h3>BONSAI COFFEE</h3>
+            <p>盆栽好きのオーナーが始めた、盆栽を眺めながらゆっくりとコーヒーを味わえる渋谷区の人気カフェ。コンクリート調の無機質な店内に盆栽の緑が映え、時代に合わせたモダンな盆栽体験ができる。自家製チーズケーキが人気。</p>
+        </div>
+    </div>
+    <a href="#" rel="modal:close">Close</a>
+</div>
+
+<div class="section s_01">
+    <div class="wrap_alljapan">
+        <h3>日本各地でBONSAIに出会う</h3>
+        <div class="accordion_one">
+            <div class="accordion_header"><h3>北海道・東北</h3><div class="i_box"><i class="one_i"></i></div></div>
+            <div class="accordion_inner">
+            <div class="box_one">
+                <ul>
+                    <li class="txt_a_ac">北海道札幌市　<a href="https://tanagokoro-h.org/" target="_blank" rel="noopener noreferrer">掌 TANAGOKORO<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">秋田県横手市　<a href="https://m-furusato.sakura.ne.jp/" target="_blank" rel="noopener noreferrer">十文字神社<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">山形県寒河江市　<a href="https://m-furusato.sakura.ne.jp/" target="_blank" rel="noopener noreferrer">最上川ふるさと総合公園<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+  
+        <div class="accordion_one">
+            <div class="accordion_header"><h3>関東</h3><div class="i_box"><i class="one_i"></i></div></div>
+            <div class="accordion_inner">
+            <div class="box_one">
+                <ul>
+                    <li class="txt_a_ac">東京都立川市　<a href="https://www.showakinen-koen.jp/facility/facility-382/" target="_blank" rel="noopener noreferrer">国営昭和記念公園 盆栽苑<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">神奈川県湯河原町　<a href="https://je-suis-un.com/" target="_blank" rel="noopener noreferrer">樹翠菴<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">山形県寒河江市　<a href="https://m-furusato.sakura.ne.jp/" target="_blank" rel="noopener noreferrer">最上川ふるさと総合公園<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        
+        <div class="accordion_one">
+            <div class="accordion_header"><h3>中部</h3><div class="i_box"><i class="one_i"></i></div></div>
+            <div class="accordion_inner">
+            <div class="box_one">
+                <ul>
+                    <li class="txt_a_ac">静岡県浜松市　<a href="https://bonsai-ikuma.com/" target="_blank" rel="noopener noreferrer">盆栽いくま<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">愛知県名古屋市　<a href="https://shumokukan.jp/" target="_blank" rel="noopener noreferrer">文化のみち橦木館<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">岐阜県高山市　<a href="https://jinya.gifu.jp/" target="_blank" rel="noopener noreferrer">高山陣屋<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+      
+        <div class="accordion_one">
+            <div class="accordion_header"><h3>近畿</h3><div class="i_box"><i class="one_i"></i></div></div>
+            <div class="accordion_inner">
+            <div class="box_one">
+                <ul>
+                    <li class="txt_a_ac">京都府京都市　大徳寺 芳春院 盆栽庭園</a></p></li>
+                    <li class="txt_a_ac">滋賀県長浜市　<a href="https://kitabiwako.jp/keiunkan/" target="_blank" rel="noopener noreferrer">慶雲館 長浜盆梅展<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">大阪府大阪市　<a href="https://www.osakacastlepark.jp/?lang=ja" target="_blank" rel="noopener noreferrer">大阪城公園<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+      
+        <div class="accordion_one">
+            <div class="accordion_header"><h3>中国・四国</h3><div class="i_box"><i class="one_i"></i></div></div>
+            <div class="accordion_inner">
+            <div class="box_one">
+                <ul>
+                    <li class="txt_a_ac">島根県安来市　<a href="https://www.adachi-museum.or.jp/" target="_blank" rel="noopener noreferrer">足立美術館<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">岡山県岡山市　<a href="https://okayama-korakuen.jp/index.html" target="_blank" rel="noopener noreferrer">後楽園<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">広島県広島市　<a href="http://www.hiroshima-bot.jp/" target="_blank" rel="noopener noreferrer">広島市植物公園<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+          
+        <div class="accordion_one">
+            <div class="accordion_header"><h3>九州・沖縄</h3><div class="i_box"><i class="one_i"></i></div></div>
+            <div class="accordion_inner">
+            <div class="box_one">
+                <ul>
+                    <li class="txt_a_ac">福岡県福岡市　<a href="https://botanical-garden.city.fukuoka.lg.jp/" target="_blank" rel="noopener noreferrer">福岡市植物園<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">鹿児島県鹿児島市　<a href="https://www.senganen.jp/" target="_blank" rel="noopener noreferrer">仙巌園<span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                    <li class="txt_a_ac">沖縄県名護市　<a href="https://www.neopark.co.jp/" target="_blank" rel="noopener noreferrer">ネオパークオキナワ <span class="material-symbols-outlined">open_in_new</span></a></p></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="wrap_next">
+    <div class="next">
+        <a href="../shindan/index.html">
+        <div class="btm_shindan">
+            <h3>BONSAI DNA診断</h3>
+            <p>あなたと一致する盆栽を診断。</p>
+        </div></a>
+    </div>
+</div>
+</main>
+
+<footer>
+    <div class="wrap_footer">
+        <ul>
+            <li><a href="index.html">TOP</a></li>
+            <li><a href="../kaitai/index.html">解体新書</a></li>
+            <li><a href="../zukan/index.html">図鑑</a></li>
+            <li><a href="../rekishi/index.html">宿る歴史</a></li>
+            <li><a href="../spot/index.html">出会う</a></li>
+            <li><a href="../shindan/index.html">BONSAI DNA診断</a></li>
+        </ul>
+        <small>©2026 BONSAI いのちの螺旋</small>
+    </div>
+</footer>
+
+</div>
+
+
+
+<!-- fatNav -->
+<script src="../js/jquery-fatNav-master/dist/jquery.fatNav.min.js"></script>
+</body>
+
+</html>

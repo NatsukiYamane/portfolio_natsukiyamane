@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BONSAIーいのちの螺旋| 解体新書</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="../js/jquery-fatNav-master/dist/jquery.fatNav.css">
+<link rel="stylesheet"  href="../js/slick-master/slick/slick.css"/>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<!-- Googlematerial&yymbols -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=open_in_new" />
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+<!-- jQuery Modal (JSはjQueryの後に読み込む必要があります) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+<!--ready関数-->
+<script>
+$(function() {
+    $.fatNav();
+});
+</script>
+<script>
+$(document).on('ready', function() {
+  $(".hachi .full-screen").slick({
+    arrows: false,
+    centerMode: true,
+    centerPadding: '5%',
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 5000,
+    cssEase: 'linear',
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    mobileFirst: true,
+  });
+});
+</script>
+
+</head>
+
+<body>
+<div class="wrap_top">
+    <div class="head">
+        <nav class="fat-nav">
+            <div class="fat-nav__wrapper">
+                <ul>
+                    <li><a href="../top/index.html">TOP</a></li>
+                    <li><a href="../kaitai/index.html">解体新書</a></li>
+                    <li><a href="../zukan/index.html">図鑑</a></li>
+                    <li><a href="../rekishi/index.html">宿る歴史</a></li>
+                    <li><a href="../spot/index.html">出会う</a></li>
+                    <li><a href="../shindan/index.html">BONSAI DNA診断</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="copy">
+            <h2>BONSAI解体新書</h2>
+            <p>生きる芸術の全貌を解析。<br>そのDNAを構成する要素とは―</p>
+        </div>
+    </div>
+
+<main>
+    <div class="main_intro">
+        <div class="somosomo">
+            <h3>（ そもそも盆栽とは ）</h3>
+            <p>語源的には「盆（鉢）」に「栽（植える）」こと、すなわち「鉢に植えられたもの」を意味する。<br>
+            盆栽の目的は、野外で見られる大自然の風景や老木の姿を小さな鉢の中に切り取り、縮小して再現することにある。<br>
+            それは単なる自然の縮小模型ではなく、樹木の成長や老い、再生といった、自然の美しさ、厳しさ、雄大さ。</p>
+            <p>つまり、盆栽は</p>
+            <h2>自然と人間の調和を体現する生きた芸術。</h2>
+        </div>
+    </div>
+    <div class="kaitai">
+        <div class="dekabonsai"><img src="../img/kuromatsu.png" alt=""></div>
+        <div class="detail">
+            <a href="#ha" rel="modal:open"><div class="spot_btn1">CHECK</div></a>
+            <a href="#eda" rel="modal:open"><div class="spot_btn2">CHECK</div></a>
+            <a href="#miki" rel="modal:open"><div class="spot_btn3">CHECK</div></a>
+            <a href="#ne" rel="modal:open"><div class="spot_btn4">CHECK</div></a>
+        </div>
+    </div>
+<!-- Modal HTML embedded directly into document -->
+    <div id="ha" class="modal">
+        <h3 id="detail_name">HA</h3>
+        <div class="modalbox">
+            <div class="ha_img"><img src="../img/ha_img.png" alt="盆栽の葉の画像"></div>
+            <div class="ha_txt">
+                <h3>葉で感じる、季節の移ろい</h3>
+                <p>盆栽の葉は、特定の1種類の形があるわけではなく、樹種ごとにかなり特徴が異なる。季節によって色や姿が変化する葉は、四季の移ろいを感じさせる。また盆栽では、葉刈りや芽摘みといった手入れによって葉を小さく整えることがある。<br>こうした葉の形や変化が、盆栽に自然の美しさと奥深い表情を与えている。</p>
+            </div>
+        </div>
+        <a href="#" rel="modal:close">Close</a>
+    </div>
+    <div id="eda" class="modal">
+        <h3 id="detail_name">EDA</h3>
+        <div class="modalbox">
+            <div class="ha_img"><img src="../img/eda_img.png" alt="盆栽の枝の画像"></div>
+            <div class="ha_txt">
+                <h3>鉢の中の自然を形づくる、枝</h3>
+                <p>枝は、木の個性や動きを表現する重要な要素。 例えば、クロマツは力強く曲がる枝で風格を生み、ケヤキは細かく広がる枝で繊細な美しさを見せる。枝は年月とともに太くなり、まるで自然の中で育った大木のようなた力強さを表現する。剪定や針金掛けによって枝の流れを整え、長い時間をかけて美しいシルエットをつくり出すのも醍醐味にのひとつである。その枝ぶりが、小さな鉢の中に壮大な自然の景色を描き出す。</p>
+            </div>
+        </div>
+        <a href="#" rel="modal:close">Close</a>
+    </div>
+    <div id="miki" class="modal">
+        <h3 id="detail_name">MIKI</h3>
+        <div class="modalbox">
+            <div class="ha_img"><img src="../img/miki_img.png" alt="盆栽の葉の画像"></div>
+            <div class="ha_txt">
+                <h3>力強さと美しさをもたらす、幹</h3>
+                <p>木の力強さや年月を感じさせる、盆栽にとって最も重要ともいえる幹。ゆるやかな曲線や傾きによって、風や自然の影響を受けて育った姿を表現する。太く荒々しい樹皮を持ち、長い時間を生きてきた風格を感じさせるもの。しなやかに柔らかく、生命の躍動感を感じさせるもの。剪定や針金掛けによって幹の流れや姿を整え、盆栽全体に力強さと奥深い美しさをもたらす。</p>
+            </div>
+        </div>
+        <a href="#" rel="modal:close">Close</a>
+    </div>
+    <div id="ne" class="modal">
+        <h3 id="detail_name">NE</h3>
+        <div class="modalbox">
+            <div class="ha_img"><img src="../img/ne_img.png" alt="盆栽の葉の画像"></div>
+            <div class="ha_txt">
+                <h3>大地とつながり木を支える、根</h3>
+                <p>根は木が大地にしっかりと根付く安定感を表現する。 地表に現れる根は「根張り」と呼ばれ、盆栽の美しさを左右する重要な見どころのひとつ。例えば、ケヤキは四方に広がる力強い根張りが魅力とされている。植え替えの際に根を整えながら、自然で美しい広がりをつくる。その根の姿が、小さな鉢の中に大地とつながるような力強さを感じさせる。</p>
+            </div>
+        </div>
+        <a href="#" rel="modal:close">Close</a>
+    </div>
+    <article class="jinshari">
+        <div class="jinshari_txt">
+            <h3>（ 神と舎利　ジン／シャリ ）</h3>
+            <p>「神」は枝が枯れた状態のもの、「舎利」は幹が枯れた状態のものを指す。<br>歳月を経た松や真柏では、樹木の一部が枯れたあと形を残したまま、白い肌を見せることがある。<br>人間の手でそれを表現し、緑の葉と白い肌のコントラストを生み出すことで、盆栽により深みと美しさをもたらす。</p>
+        </div>
+        <div class="jinshari_img">
+            <img class="jin1" src="../img/jin.png" alt="舎利を作る手元の画像">
+            <img class="jin2" src="../img/shari.png" alt="盆栽の舎利の画像">
+        </div>
+    </article>
+    <article class="hachi">
+        <div class="hachi_txt">
+            <h3>額縁としての、鉢</h3>
+            <p>鉢は単なる植物を育てるための容器ではなく、樹木と美術的に調和し、ひとつの世界観を創り出すための重要な額縁となる。<br>焼き方や鉢の形、大きさによって盆栽全体の印象は大きく変化し、鉢・樹木・空間の三位一体を楽しむことも、盆栽の魅力である。</p>
+        </div>
+        <div class="section">
+            <div class="sliderArea">
+                <div class="full-screen slider">
+                    <div><img src="../img/hachi1.png" alt="盆栽の鉢の画像"></div>
+                    <div><img src="../img/hachi2.png" alt="盆栽の鉢の画像"></div>
+                    <div><img src="../img/hachi3.png" alt="盆栽の鉢の画像"></div>
+                    <div><img src="../img/hachi4.png" alt="盆栽の鉢の画像"></div>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="next">
+        <h2>NEXT</h2>
+            <div class="next_btm">
+                <a href="../zukan/index.html"><img src="../img/kaitai_nextbtn.png" alt="解体新書のページに飛ぶボタン">
+                <div class="next_btmtxt">
+                    <h3>BONSAI図鑑</h3>
+                    <p>形や植物の特徴での盆栽の分類を紹介。</p>
+                </div></a>
+            </div>
+            <a href="../shindan/index.html">
+            <div class="btm_shindan">
+                <h3>BONSAI DNA診断</h3>
+                <p>あなたと一致する盆栽を診断。</p>
+            </div></a>
+    </div>
+</main>
+
+<footer>
+    <div class="wrap_footer">
+        <ul>
+            <li><a href="../index.html">TOP</a></li>
+            <li><a href="../kaitai/index.html">解体新書</a></li>
+            <li><a href="../zukan/index.html">図鑑</a></li>
+            <li><a href="../rekishi/index.html">宿る歴史</a></li>
+            <li><a href="../spot/index.html">出会う</a></li>
+            <li><a href="../shindan/index.html">BONSAI DNA診断</a></li>
+        </ul>
+        <small>©2026 BONSAI いのちの螺旋</small>
+    </div>
+</footer>
+</div>
+</div>
+
+
+
+<script src="../js/slick-master/slick/slick.min.js"></script>
+<script src="../js/jquery-fatNav-master/dist/jquery.fatNav.min.js"></script>
+</body>
+
+</html>

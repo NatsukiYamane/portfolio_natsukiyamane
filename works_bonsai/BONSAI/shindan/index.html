@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>BONSAIーいのちの螺旋| DNA診断</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="../js/jquery-fatNav-master/dist/jquery.fatNav.css">
+<link rel="stylesheet"  href="../js/slick-master/slick/slick.css"/>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/style.css" rel="stylesheet">
+<!-- Googlematerial&yymbols -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=open_in_new" />
+<!--jQuery本体-->
+<script src="../js/jquery-1.11.2.min.js"></script>
+<!-- jQuery Modal (JSはjQueryの後に読み込む必要があります) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+<!--ready関数-->
+<script>
+$(function() {
+    $.fatNav();
+});
+</script>
+<script>
+$(document).on('ready', function() {
+  $(".full-screen").slick({
+    arrows: false,
+    centerMode: true,
+    centerPadding: '5%',
+    autoplay: true,
+    autoplaySpeed: 2000,
+    speed: 1500,
+    infinite: true,
+  });
+});
+
+$(function () {
+  const stalker = $("#js-stalker");
+  $(document).on("mousemove", function (e) {
+    // マウスの座標を取得
+    const x = e.clientX;
+    const y = e.clientY;
+    // ストーカーの位置を更新
+    stalker.css({
+      opacity: 1, // カーソルが画面内に入ったら不透明にする
+      transform: "translate(" + x + "px, " + y + "px)", // マウスの座標に移動
+    });
+  });
+});
+
+
+</script>
+<script>
+$(function () {
+
+  // STARTボタンがクリックされたら（最初の質問を表示）
+  $('.tool-btn.start-btn').on('click', function () {
+    var target = $(this).data('box-link');
+    if (target) {
+      $('#' + target).fadeIn(200);
+      $(this).closest('.btn-wrap').fadeOut(200); // STARTボタンを消す
+    }
+  });
+
+  // 選択肢がクリックされたら自動で次へ進む
+  $('.select').on('click', function () {
+    // 1. 選択したボタンの色を変える（元々あるis-inactiveクラスを付与）
+    $(this).addClass('is-inactive');
+    $(this).siblings('.select').removeClass('is-inactive');
+
+    var currentBox = $(this).parents('.box');
+
+    // 2. 0.2秒（400ミリ秒）待ってから次の画面へ自動遷移
+    setTimeout(function() {
+      // 今の質問をフェードアウト
+      currentBox.fadeOut(100);
+
+      // 0.2秒（フェードアウト完了）待ってから次を表示
+      setTimeout(function() {
+        // もし現在の質問が最後の「Q3」だったら、結果を計算して表示
+        if (currentBox.attr('id') === 'q3') {
+          showResult();
+        } else {
+          // それ以外（Q1, Q2）なら、次の質問（次の .box）を表示
+          currentBox.next('.box').fadeIn(100);
+        }
+      }, 200);
+    }, 200); // 選択肢の色が変わったのを見せるための時間
+  });
+
+  // 診断結果の出し分けを関数（まとまり）にする
+  function showResult() {
+    var yesCnt = $('.select.yes.is-inactive').length;
+    var noCnt  = $('.select.no.is-inactive').length;
+    var vagueCnt = $('.select.vague.is-inactive').length;
+
+    if (yesCnt >= 2) {
+      $('#a1').fadeIn(200);
+    } else if ((yesCnt == 1) && ((noCnt == 1) || (vagueCnt == 1))) {
+      if ($('#q1 .select.yes').hasClass('is-inactive')) {
+        $('#a2').fadeIn(400);
+      } else if ($('#q2 .select.yes').hasClass('is-inactive')) {
+        $('#a3').fadeIn(400);
+      } else {
+        $('#a4').fadeIn(400);
+      }
+    } else if ((noCnt >= 2) || ((noCnt == 1) && (vagueCnt == 1))) {
+      $('#a4').fadeIn(400);
+    } else if (vagueCnt >= 2) {
+      $('#a5').fadeIn(400);
+    }
+  }
+
+  // 診断を閉じる・終了する
+  $('.close-btn, .tool-btn.finish').on('click', function () {
+    $('.box').fadeOut(200);
+    // 状態をリセット
+    setTimeout(function() {
+      $('.select').removeClass('is-inactive');
+      $('.tool-btn.start-btn').parents('.btn-wrap').fadeIn(); // STARTボタンを再表示
+    }, 200);
+  });
+
+});
+</script>
+</head>
+
+<body class="shindan_body">
+    <div class="head">
+        <nav class="fat-nav">
+            <div class="fat-nav__wrapper">
+                <ul>
+                    <li><a href="../top/index.html">TOP</a></li>
+                    <li><a href="../kaitai/index.html">解体新書</a></li>
+                    <li><a href="../zukan/index.html">図鑑</a></li>
+                    <li><a href="../rekishi/index.html">宿る歴史</a></li>
+                    <li><a href="../spot/index.html">出会う</a></li>
+                    <li><a href="../shindan/index.html">BONSAI DNA診断</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+<main>
+  <div class="wrap">
+    <div class="title-wrap">
+      <div class="inner-block">
+        <h2 class="title">BONSAI DNA 診断</h2>
+        <p>あなたの中に流れるDNAと一致する盆栽を診断。</p>
+      </div>
+    </div>
+    <div class="diagnose-wrap">
+      <div class="inner-block">
+        <div class="btn-wrap">
+          <button type="button" class="tool-btn start-btn" data-box-link="q1">START</button>
+        </div>
+        <div class="box-wrap">
+          
+          <div id="q1" class="box" style="display:none;">
+            <span class="close-btn"><span class="mark"></span></span>
+            <h3 class="title">
+              <span class="ib">Q1.物を選ぶ基準は？</span><span class="small"><p>（一つだけ選択）</p></span>
+            </h3>
+            <div class="select-wrap">
+              <button type="button" class="select yes">A. 長く使える頑丈さ</button>
+              <button type="button" class="select no">B. そのときの直感</button>
+              <button type="button" class="select vague">どちらとも言えない</button>
+            </div>
+          </div>
+
+          <div id="q2" class="box" style="display:none;">
+            <span class="close-btn"><span class="mark"></span></span>
+            <h3 class="title">
+              <span class="ib">Q2.部屋の雰囲気は？</span><span class="small"><p>（一つだけ選択）</p></span>
+            </h3>
+            <div class="select-wrap">
+              <button type="button" class="select yes">A. ミニマルで無機質</button>
+              <button type="button" class="select no">B. 多様で有機的</button>
+              <button type="button" class="select vague">どちらとも言えない</button>
+            </div>
+          </div>
+
+           <div id="q3" class="box" style="display:none;">
+            <span class="close-btn"><span class="mark"></span></span>
+            <h3 class="title">
+              <span class="ib">Q3.あなたの思考は？</span><span class="small"><p>（一つだけ選択）</p></span>
+            </h3>
+            <div class="select-wrap">
+              <button type="button" class="select yes">A. 理論的で慎重派</button>
+              <button type="button" class="select no">B. 感情的で人情派</button>
+              <button type="button" class="select vague">どちらとも言えない</button>
+            </div>
+          </div>
+
+          <div id="a1" class="box result" style="display:none;">
+            <span class="close-btn"><span class="mark"></span></span>
+            <p class="title">あなたのBONSAI DNAは…<br><span class="bonsai_dna">直幹の赤松</span><br>タイプです。</p>
+            <p class="txt">理論的で洗練された雰囲気のあなたは、直幹の松のDNAと一致します。<br class="sp">太く強くまっすぐに伸びる幹は、誠実で芯のあるあなたと重なります。</p>
+            <a href="../zukan/index.html#chokkan"><div class="shousai"><h3>詳細を見る</h3></div></a>
+            <div class="btn-wrap"><button type="button" class="tool-btn finish">診断をやり直す</button></div>
+          </div>
+
+          <div id="a2" class="box result" style="display:none;">
+            <span class="close-btn"><span class="mark"></span></span>
+            <p class="title">あなたのBONSAI DNAは…<br><span class="bonsai_dna">模様木の真柏</span><br>タイプです。</p>
+            <p class="txt">柔軟で自然体な雰囲気のあなたは、模様木の真柏のDNAと一致します。<br class="sp">柔らかくしなやかに環境に合わせられるあなたは、まるで模様木の真柏です。</p>
+            <a href="../zukan/index.html#moyo"><div class="shousai"><h3>詳細を見る</h3></div></a>
+            <div class="btn-wrap"><button type="button" class="tool-btn finish">診断をやり直す</button></div>
+          </div>
+
+          <div id="a3" class="box result" style="display:none;">
+            <span class="close-btn"><span class="mark"></span></span>
+            <p class="title">あなたのBONSAI DNAは…<br><span class="bonsai_dna">懸崖のモミジ</span><br>タイプです。</p>
+            <p class="txt">逆境に負けず忍耐強いあなたは、懸崖の盆栽のDNAと一致します。<br class="sp">厳しい環境でも決して折れない不屈の精神を持つあなたは、まるで懸崖のモミジです。</p>
+            <a href="../zukan/index.html#kengai"><div class="shousai"><h3>詳細を見る</h3></div></a>
+            <div class="btn-wrap"><button type="button" class="tool-btn finish">診断をやり直す</button></div>
+          </div>
+
+          <div id="a4" class="box result" style="display:none;">
+            <span class="close-btn"><span class="mark"></span></span>
+            <p class="title">あなたのBONSAI DNAは…<br><span class="bonsai_dna">寄せ植え盆栽</span><br>タイプです。</p>
+            <p class="txt">アクティブで協調性の強いあなたは、寄せ木盆栽のDNAと一致します。<br class="sp">周囲の人と影響し合って成長するあなたは、寄せ植えのように独自の世界を作り出すことでしょう。</p>
+            <a href="../zukan/index.html#yosegi"><div class="shousai"><h3>詳細を見る</h3></div></a>
+            <div class="btn-wrap"><button type="button" class="tool-btn finish">診断をやり直す</button></div>
+          </div>
+
+          <div id="a5" class="box result" style="display:none;">
+            <span class="close-btn"><span class="mark"></span></span>
+            <p class="title">あなたのBONSAI DNAは…<br><span class="bonsai_dna">石づきの真柏</span><br>タイプです。</p>
+            <p class="txt">掴みどころがないが意志の強いあなたは、石づきの盆栽のDNAと一致します。<br class="sp">普段は淡々としているけれど、その才能を解き放つ場所に出会えば劇的な変化を見せるあなたは、まるで石づきの盆栽です。</p>
+            <a href="../zukan/index.html#ishiduki"><div class="shousai"><h3>詳細を見る</h3></div></a>
+            <div class="btn-wrap"><button type="button" class="tool-btn finish">診断をやり直す</button></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+    <div class="wrap_footer">
+        <ul>
+            <li><a href="../index.html">TOP</a></li>
+            <li><a href="../kaitai/index.html">解体新書</a></li>
+            <li><a href="../zukan/index.html">図鑑</a></li>
+            <li><a href="../rekishi/index.html">宿る歴史</a></li>
+            <li><a href="../spot/index.html">出会う</a></li>
+            <li><a href="../shindan/index.html">BONSAI DNA診断</a></li>
+        </ul>
+        <small>©2026 BONSAI いのちの螺旋</small>
+    </div>
+</footer>
+<script src="../js/jquery-fatNav-master/dist/jquery.fatNav.min.js"></script>
+</body>
+</html>

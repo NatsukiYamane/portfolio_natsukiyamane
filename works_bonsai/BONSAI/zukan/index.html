@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BONSAIーいのちの螺旋| 図鑑</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="../js/jquery-fatNav-master/dist/jquery.fatNav.css">
+    <link rel="stylesheet" href="../js/slick-master/slick/slick.css" />
+    <link href="../css/reset.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <!-- Googlematerial&yymbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=open_in_new" />
+    <!--jQuery本体-->
+    <script src="../js/jquery-1.11.2.min.js"></script>
+    <!-- jQuery Modal (JSはjQueryの後に読み込む必要があります) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+    <!--ready関数-->
+    <script>
+        $(function () {
+            $.fatNav();
+        });
+    </script>
+    <script>
+        $(document).on('ready', function () {
+            $(".full-screen").slick({
+                arrows: false,
+                centerMode: true,
+                centerPadding: '5%',
+                autoplay: true,
+                autoplaySpeed: 2000,
+                speed: 1500,
+                infinite: true,
+            });
+        });
+
+        $(function () {
+            const stalker = $("#js-stalker");
+            $(document).on("mousemove", function (e) {
+                // マウスの座標を取得
+                const x = e.clientX;
+                const y = e.clientY;
+                // ストーカーの位置を更新
+                stalker.css({
+                    opacity: 1, // カーソルが画面内に入ったら不透明にする
+                    transform: "translate(" + x + "px, " + y + "px)", // マウスの座標に移動
+                });
+            });
+        });
+
+        // 別ページからハッシュ（#moyoなど）付きでアクセスされた場合、対象モーダルを自動展開
+        $(window).on('load', function () {
+            if (window.location.hash) {
+                var targetModal = window.location.hash;
+                if ($(targetModal).length && $(targetModal).hasClass('modal')) {
+                    $(targetModal).modal();
+                }
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap_top">
+        <div class="head">
+            <nav class="fat-nav">
+                <div class="fat-nav__wrapper">
+                    <ul>
+                        <li><a href="../top/index.html">TOP</a></li>
+                        <li><a href="../kaitai/index.html">解体新書</a></li>
+                        <li><a href="../zukan/index.html">図鑑</a></li>
+                        <li><a href="../rekishi/index.html">宿る歴史</a></li>
+                        <li><a href="../spot/index.html">出会う</a></li>
+                        <li><a href="../shindan/index.html">BONSAI DNA診断</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="copy">
+                <h2>BONSAI図鑑</h2>
+                <p>それぞれに個性が光る盆栽たち。<br>一つとして同じものはないが、樹種や形状の特徴で分類されることがある。<br>あなたに似た個性を持つ盆栽もいるかもしれない。</p>
+            </div>
+        </div>
+
+        <main>
+            <div class="bunrui">
+                <article class="jumoku">
+                    <h2>樹木による分類</h2>
+                    <p>盆栽は、その植物の種類自体での分類ができる。<br>大きく松柏盆栽と雑木盆栽の2つに分けられ、雑木盆栽はその中でも4つの種類に分けられることがある。<br>代表的な植物としては、松や真柏などの松柏盆栽だが、雑木盆栽の中には花や実をつける盆栽もある。
+                    </p>
+                    <ul class="jumokubox">
+                        <li>
+                            <div class="jumoku_txt">
+                                <h3>松柏盆栽</h3>
+                                <p>黒松、五葉松、真柏などの針葉樹を用いた盆栽。<br>一年中緑色の葉を茂らせ、その剛健さや永遠性、生命力の強さから、盆栽の代表格として古くから愛されている。</p>
+                            </div>
+                            <div class="jumoku_img">
+                                <img src="../img/shouhaku.png" alt="松柏盆栽の葉の画像">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jumoku_txt">
+                                <h3>葉物盆栽</h3>
+                                <p>季節ごとに変化を見せる落葉樹などの葉を楽しむ盆栽。<br>楓、欅、モミジ、竹などが代表的で、葉の姿や四季の移ろいを感じられる。育てやすく盆栽初心者でも気軽に楽しめる。
+                                </p>
+                            </div>
+                            <div class="jumoku_img">
+                                <img src="../img/hamono.png" alt="葉物盆栽の葉の画像">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jumoku_txt">
+                                <h3>花物盆栽</h3>
+                                <p>花の美しさを感じられる盆栽。<br>梅、桜、ボケ、サツキ、藤などが用いられる。華やかで可憐だが、他の盆栽と比べて手がかかる傾向も。</p>
+                            </div>
+                            <div class="jumoku_img">
+                                <img src="../img/hanamono.png" alt="花物盆栽の葉の画像">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jumoku_txt">
+                                <h3>実物盆栽</h3>
+                                <p>実を成らせて鑑賞する盆栽。<br>姫リンゴ、カリン、柿、ウメモドキなどが代表的。肥料の調節などやや難しい面はあるが、色づく実に季節を感じる盆栽。</p>
+                            </div>
+                            <div class="jumoku_img">
+                                <img src="../img/mimono.png" alt="実物盆栽の葉の画像">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="jumoku_txt">
+                                <h3>草物盆栽</h3>
+                                <p>樹木ではなく、山野の草花を鉢に植えて愛でる盆栽。<br>単独で飾って鑑賞するというよりは、数種類の野草や山草などを寄せ植えにして、花畑や野原など山野の景色を再現することが多い。
+                                </p>
+                            </div>
+                            <div class="jumoku_img">
+                                <img src="../img/kusamono.png" alt="草物盆栽の葉の画像">
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <article class="size">
+                    <h2>大きさによる分類</h2>
+                    <p>人よりも大きなものから、手のひらサイズの小さなものまで。盆栽はその大きさもさまざま。<br>鉢の土の表面の根元から、樹木の最頂部までの樹高で分類される。</p>
+                    <div class="size_detail">
+                        <table>
+                            <tr>
+                                <th>大品盆栽：</th>
+                                <td>40cm以上</td>
+                            </tr>
+                            <tr>
+                                <th>中品盆栽：</th>
+                                <td>20cm〜40cm程度</td>
+                            </tr>
+                            <tr>
+                                <th>小品盆栽：</th>
+                                <td>20cm以下</td>
+                            </tr>
+                            <tr>
+                                <th>豆盆栽：</th>
+                                <td>手の上に乗せられるほどの極小サイズ</td>
+                            </tr>
+                        </table>
+                        <div class="bonkage">
+                            <img src="../img/bonkage.png" alt="盆栽のシルエット画像">
+                        </div>
+                    </div>
+                </article>
+                <article class="jukei">
+                    <h2>樹形による分類</h2>
+                    <p>自然の影響を受けた樹木の形がさまざまであることを、盆栽では鉢の中で再現する。<br>育てる人それぞれの解釈に基づいて形作られる盆栽は、私たちの個性がそうであるように、ふたつとして同じものは存在しえない。<br>ここでは樹形による分類の一部を紹介するが、その個性に正解はない。
+                    </p>
+                    <div class="jukeichart">
+                        <ul class="chartname">
+                            <li>柔</li>
+                            <li>静</li>
+                            <li>剛</li>
+                            <li>動</li>
+                        </ul>
+                        <ul class="chart">
+                            <li><img src="../img/chokkan.png" alt="直幹盆栽の画像"></li>
+                            <li><img src="../img/moyouki.png" alt="模様木盆栽の画像"></li>
+                            <li><img src="../img/shakan.png" alt="斜幹盆栽の画像"></li>
+                            <li><img src="../img/kengai.png" alt="懸崖盆栽の画像"></li>
+                            <li><img src="../img/yosegi.png" alt="寄せ木盆栽の画像"></li>
+                            <li><img src="../img/ishiduki.png" alt="石づき盆栽の画像"></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <article class="gallery">
+                <div class="section">
+                    <div class="sliderArea">
+                        <div class="full-screen slider">
+                            <div><a href="#moyo" rel="modal:open"><img src="../img/kuromatsu.png" alt="盆栽の鉢の画像"></a></div>
+                            <div><a href="#chokkan" rel="modal:open"><img src="../img/shindan_chokkan.png" alt="盆栽の鉢の画像"></a></div>
+                            <div><a href="#kengai" rel="modal:open"><img src="../img/shindan_kengai.png" alt="盆栽の鉢の画像"></a></div>
+                            <div><a href="#yosegi" rel="modal:open"><img src="../img/shindan_yosegi.png" alt="盆栽の鉢の画像"></a></div>
+                            <div><a href="#ishiduki" rel="modal:open"><img src="../img/shindan_ishiduki.png" alt="盆栽の鉢の画像"></a></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Modals HTML embedded directly into document -->
+            <div id="moyo" class="modal">
+                <h3 id="detail_name">MOYOGI</h3>
+                <div class="modalbox">
+                    <div class="ha_img"><img src="../img/kuromatsu.png" alt="模様木"></div>
+                    <div class="ha_txt">
+                        <h3>幹が描く曲線美 ― 模様木</h3>
+                        <p>幹が前後左右に曲がりながら立ち上がる模様木。自然界で風雪に耐えながら育った姿を写し取った、盆栽の代表的な樹形。</p>
+                    </div>
+                </div>
+                <a href="#" rel="modal:close">Close</a>
+            </div>
+            <div id="chokkan" class="modal">
+                <h3 id="detail_name">CHOKKAN</h3>
+                <div class="modalbox">
+                    <div class="ha_img"><img src="../img/shindan_chokkan.png" alt="直幹"></div>
+                    <div class="ha_txt">
+                        <h3>天へ向かう力強さ ― 直幹</h3>
+                        <p>根元から先端まで、幹がまっすぐに伸びる直幹。大木としての風格と、生命の力強さをストレートに感じさせる。</p>
+                    </div>
+                </div>
+                <a href="#" rel="modal:close">Close</a>
+            </div>
+            <div id="kengai" class="modal">
+                <h3 id="detail_name">KENGAI</h3>
+                <div class="modalbox">
+                    <div class="ha_img"><img src="../img/shindan_kengai.png" alt="懸崖"></div>
+                    <div class="ha_txt">
+                        <h3>崖を生き抜く生命力 ― 懸崖</h3>
+                        <p>幹が鉢の縁より下に垂れ下がる懸崖。厳しい自然環境の断崖絶壁に根を張り、逞しく生きる樹木の姿を表現する。</p>
+                    </div>
+                </div>
+                <a href="#" rel="modal:close">Close</a>
+            </div>
+            <div id="yosegi" class="modal">
+                <h3 id="detail_name">YOSEUE</h3>
+                <div class="modalbox">
+                    <div class="ha_img"><img src="../img/shindan_yosegi.png" alt="寄せ木"></div>
+                    <div class="ha_txt">
+                        <h3>小さな森の景色 ― 寄せ木</h3>
+                        <p>ひとつの鉢に複数の木を植え込む寄せ木。まるで自然の森や林の一部を切り取ったかのような、遠近感のある情景が魅力。</p>
+                    </div>
+                </div>
+                <a href="#" rel="modal:close">Close</a>
+            </div>
+            <div id="ishiduki" class="modal">
+                <h3 id="detail_name">ISHITSUKI</h3>
+                <div class="modalbox">
+                    <div class="ha_img"><img src="../img/shindan_ishiduki.png" alt="石付き"></div>
+                    <div class="ha_txt">
+                        <h3>岩場と結実する自然の姿 ― 石づき</h3>
+                        <p>石を自然の岩山に見立て、そこに木を這わせる石づき。過酷な環境で生き抜く壮厳な景色を、ダイナミックに演出する。</p>
+                    </div>
+                </div>
+                <a href="#" rel="modal:close">Close</a>
+            </div>
+
+            <div class="next">
+                <h2>NEXT</h2>
+                <div class="next_btm">
+                    <a href="../rekishi/index.html"><img src="../img/kaitai_nextbtn.png" alt="解体新書のページに飛ぶボタン">
+                        <div class="next_btmtxt">
+                            <h3>BONSAIに宿る歴史</h3>
+                            <p>盆栽に宿る歴史とは</p>
+                        </div>
+                    </a>
+                </div>
+                <a href="../shindan/index.html">
+                    <div class="btm_shindan">
+                        <h3>BONSAI DNA診断</h3>
+                        <p>あなたと一致する盆栽を診断。</p>
+                    </div>
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <div class="wrap_footer">
+                <ul>
+                    <li><a href="../index.html">TOP</a></li>
+                    <li><a href="../kaitai/index.html">解体新書</a></li>
+                    <li><a href="../zukan/index.html">図鑑</a></li>
+                    <li><a href="../rekishi/index.html">宿る歴史</a></li>
+                    <li><a href="../spot/index.html">出会う</a></li>
+                    <li><a href="../shindan/index.html">BONSAI DNA診断</a></li>
+                </ul>
+                <small>©2026 BONSAI いのちの螺旋</small>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <div class="stalker" id="js-stalker"></div>
+    <script src="../js/slick-master/slick/slick.min.js"></script>
+    <script src="../js/jquery-fatNav-master/dist/jquery.fatNav.min.js"></script>
+</body>
+
+</html>

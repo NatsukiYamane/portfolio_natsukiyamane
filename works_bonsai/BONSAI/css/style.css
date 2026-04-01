@@ -1,0 +1,2025 @@
+@charset "utf-8";
+
+/* =========================================
+   Base
+========================================= */
+body {
+  font-family: 'Montserrat', 'Noto Sans', sans-serif;
+  color: #1a1a1a;
+  background: linear-gradient(180deg, #dce4eb 0%, #f4e8eb 25%, #dce4eb 50%, #f4e8eb 75%, #dce4eb 100%);
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  overflow-x: hidden;
+  word-break: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 150%;
+  font-weight: bold;
+  letter-spacing: 10%;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.hamburger {
+  top: 5%;
+  right: 10%;
+  margin: 0;
+}
+
+.hamburger__icon {
+  width: 50px;
+  height: 5px;
+  background-color: #1a1a1a;
+  position: relative;
+  /* アイコンの中央に配置するための調整 */
+  margin-top: 20px;
+}
+
+.hamburger__icon:before,
+.hamburger__icon:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 5px;
+  background-color: #1a1a1a;
+  left: 0;
+}
+
+.hamburger__icon:before {
+  top: -15px;
+}
+
+.hamburger__icon:after {
+  top: 15px;
+}
+
+/* 閉じる（×）状態のアニメーション調整 */
+.hamburger.active .hamburger__icon {
+  background-color: transparent;
+}
+
+.hamburger.active .hamburger__icon:before {
+  transform: translateY(15px) rotate(45deg);
+}
+
+.hamburger.active .hamburger__icon:after {
+  transform: translateY(-15px) rotate(-45deg);
+}
+
+@media screen and (max-width: 767px) {
+.h1 {
+  font-size: 80px;
+}
+.h2 {
+  font-size: 2rem;
+}
+.h3 {
+  font-size: 1rem;
+}
+.p {
+  font-size: 0.8rem;
+}
+}
+
+/* =========================================
+   START
+========================================= */
+.toppage {
+  background-image: url(../img/bgi_con.jpg);
+  background-size: cover;
+  width: 100%;
+  padding: 0 10%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.topview {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.bonsai h1 {
+  font-size: 16rem;
+  font-weight: 900;
+  line-height: 90%;
+  color: #f4f5f7;
+  opacity: 50%;
+}
+
+.bonsai h1 span {
+  letter-spacing: 29%;
+}
+.bonsai p {
+  margin-top: 3rem;
+}
+
+.circle {
+  width: 1080px;
+  height: 1080px;
+  clip-path: circle(50% at 50% 50%);
+  background-color: #B7282E;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  transform: translate(10%, -30%);
+}
+
+.main_img img {
+  position: absolute;
+  top: -20px;
+  right: 5%;
+  width: 50%;
+}
+
+.start {
+  border: 1px solid #B7282E;
+  border-radius: 50px;
+  background-color: #f4f5f7;
+  color: #B7282E;
+  font-size: 24px;
+  letter-spacing: 25%;
+  width: fit-content;
+  margin: 3rem 0;
+  padding: 1.5rem 15%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.start::after {
+  background: linear-gradient(90deg, #b02a2d 20%, #202b52 120%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .4s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.start:hover {
+  color: #f4f4f4;
+}
+
+.start:hover::after {
+  transform: scale(1, 1);
+}
+@media screen and (max-width: 1024px) {
+  .main_img img {
+    width: 60%;
+    right: 3%;
+  }
+  .circle {
+    width: 700px;
+    height: 700px;
+    transform: translate(15%, -20%);
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .main_img img {
+    width: 100%;
+    right: 0;
+  }
+  .circle {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main_img img {
+    position: absolute;
+    top: 30%;
+    right: 0;
+  }
+  .bonsai h1 {
+    font-size: 6rem;
+    letter-spacing: 5%;
+  }
+  .start {
+    position: fixed;
+    bottom: 3rem;
+  }
+  .topview {
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   Top / Hero Section
+========================================= */
+.wrap_top {
+  width: 100%;
+}
+
+.head {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 10% 0;
+}
+
+.copy h1 span {
+  background: linear-gradient(90deg, #b02a2d 0%, #202b52 100%);
+  color: #f4f5f7;
+  padding: 4px 12px;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+/* スクロールダウンの位置 */
+.scroll {
+  width: fit-content;
+  margin: 10rem auto;
+  writing-mode: vertical-rl;
+  word-break: normal;
+  position: relative;
+}
+
+/* 線のアニメーション部分 */
+.scroll::before {
+  animation: scroll 2s infinite;
+  background-color: #000;
+  bottom: -115px;
+  content: "";
+  height: 100px;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  width: 1px;
+}
+
+/* 線のアニメーション */
+@keyframes scroll {
+  0% {
+    transform: scale(1, 0);
+    transform-origin: 0 0;
+  }
+
+  50% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+
+  51% {
+    transform: scale(1, 1);
+    transform-origin: 0 100%;
+  }
+
+  100% {
+    transform: scale(1, 0);
+    transform-origin: 0 100%;
+  }
+}
+
+
+/* =========================================
+   Intro
+========================================= */
+main {
+  width: 100%;
+}
+
+.intro {
+  position: relative;
+  max-width: 1240px;
+  margin: 50vh auto;
+  height: 680vh;
+}
+
+.txt {
+  position: sticky;
+  top: 4rem;
+  z-index: 0;
+}
+
+.txt p {
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.txt .red {
+  background-color: #B7282E;
+  color: #f4f5f7;
+}
+
+.txt .white {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #1a1a1a;
+}
+
+.txt_left {
+  margin: 10vh 0 50vh;
+}
+
+.txt_right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-top: 45vh;
+}
+
+.images {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.images div {
+  position: absolute;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.img1 {
+  top: 70vh;
+  right: 5%;
+  width: 35%;
+}
+
+.img2 {
+  top: 170vh;
+  left: 40%;
+  width: 20%;
+}
+
+.img3 {
+  top: 270vh;
+  right: 10%;
+  width: 25%;
+}
+
+.img4 {
+  top: 370vh;
+  left: 5%;
+  width: 40%;
+}
+
+.img5 {
+  top: 470vh;
+  left: 55%;
+  width: 20%;
+}
+
+.img6 {
+  top: 570vh;
+  left: 30%;
+  width: 35%;
+}
+
+
+/* =========================================
+   Spirit
+========================================= */
+.spirit {
+  width: 100%;
+  padding: 20% 10%;
+  margin: 0 auto;
+  background: url('../img/bgi_con.jpg');
+  background-size: contain;
+}
+.spirit_wrap {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.spirit section {
+  max-width: 610px;
+}
+
+.spirit section h3 {
+  margin-bottom: 1rem;
+}
+
+.wabisabi {
+  margin-left: 5%;
+}
+
+.shihai {
+  margin: 15% 10% 15% 45%;
+}
+
+.mujou {
+  margin-left: 20%;
+}
+
+@media screen and (max-width: 1024px) {
+  .wabisabi {
+    margin-left: 0;
+  }
+  .shihai {
+    margin: 10% 0 10% 20%;
+  }
+  .mujou {
+    margin-left: 5%;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .spirit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .spirit section {
+    margin: 10% 0;
+  }
+}
+
+/* =========================================
+   About
+========================================= */
+.about {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 250px 10%;
+}
+
+.about section p {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+/* =========================================
+   Next & Footer Area
+========================================= */
+.next {
+  max-width: 1240px;
+  margin: 0 auto;
+  z-index: 0;
+}
+
+.next h2 {
+  width: fit-content;
+  margin: 0 auto 3% auto;
+}
+
+.next_btm {
+  position: relative;
+}
+
+.next_btm a img:hover {
+  border-radius: 0 100px 0 0;
+}
+
+.next_btmtxt {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  color: #f4e8eb;
+  padding: 5% 0 0 2rem;
+}
+
+.next_btmtxt h3 {
+  font-weight: bold;
+}
+
+.next_btmtxt:hover {
+  opacity: 0.8;
+  border-radius: 0 40px 0 0;
+  transition: 0.5s;
+}
+
+.btm_shindan {
+  background-color: #B7282E;
+  color: #fff;
+  margin: 2rem 0;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btm_shindan:hover {
+  opacity: 90%;
+  transition: 0.5s;
+}
+
+.btm_shindan h3 {
+  font-weight: bold;
+}
+
+.btm_shindan p {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+footer {
+  width: 100%;
+  background-color: #f4f5f7;
+}
+
+.wrap_footer {
+  max-width: 1240px;
+  margin: 20% auto 0 auto;
+  padding: 5% 10% 1rem;
+}
+
+.wrap_footer ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrap_footer li {
+  list-style: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+small {
+  font-size: 0.5rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================================
+   KAITAISHINSHO
+========================================= */
+.main_intro {
+  max-width: 1240px;
+  margin: 20vh auto 0;
+}
+
+.somosomo h3 {
+  margin-bottom: 1rem;
+}
+
+.somosomo h2 {
+  width: fit-content;
+  margin-top: 2rem;
+  padding: 0 1%;
+  color: #f4f4f4;
+  letter-spacing: 10%;
+  background-color: #B7282E;
+}
+
+.kaitai {
+  height: 2300px;
+  padding: 0 8%;
+  position: relative;
+  z-index: 0;
+}
+
+.dekabonsai {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  transform: translateX(-50%);
+  z-index: -1;
+  width: clamp(800px, 160vw, 2000px);
+}
+
+.dekabonsai img {
+  width: 100%;
+  max-width: 2000px;
+}
+
+/* =========================================
+   KAITAISHINSHO -　DETAIL
+========================================= */
+.detail .spot_btn1 {
+  position: absolute;
+  top: clamp(10rem, 8vw, 18rem);
+  left: 20%;
+}
+
+.detail .spot_btn1::after {
+  content: url(../img/ha_detail.png);
+  position: absolute;
+  top: -200%;
+  left: 100%;
+  opacity: 0;
+  /* 完全に透明にする */
+  visibility: hidden;
+  /* 要素を非表示（クリック等も不可）にする */
+  /* 左に15pxずらしておく */
+  transform: translateX(-5px);
+  transition: all 0.4s ease;
+}
+
+.detail .spot_btn1:hover::after {
+  opacity: 1;
+  /* 不透明にする */
+  visibility: visible;
+  /* 表示する */
+  transform: translateX(0);
+  /* 元の定位置に戻す */
+}
+
+#ha,#eda,#miki,#ne,#moyo,#chokkan,#kengai,#yosegi,#ishiduki {
+  border: 3px solid #B7282E;
+  position: relative;
+  max-width: 900px;
+  padding: 3rem;
+}
+
+#detail_name {
+  font-weight: 600;
+  letter-spacing: 25%;
+  color: #f4f5f7;
+  background-color: #B7282E;
+  padding: 0.75rem 2rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+}
+
+#ha .modalbox,#eda .modalbox,#miki .modalbox,#ne .modalbox,#moyo .modalbox,#chokkan .modalbox,#kengai .modalbox,#yosegi .modalbox,#ishiduki .modalbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.ha_img,.ha_txt {
+  flex: 1;
+  min-width: 0;
+}
+
+.detail .spot_btn2 {
+  position: absolute;
+  top: clamp(500px, 45vw, 700px);
+  left: 30%;
+}
+
+.detail .spot_btn2::after {
+  content: url(../img/eda_detail.png);
+  position: absolute;
+  top: -300%;
+  left: 100%;
+  opacity: 0;
+  /* 完全に透明にする */
+  visibility: hidden;
+  /* 要素を非表示（クリック等も不可）にする */
+  /* 左に15pxずらしておく */
+  transform: translateX(-5px);
+  transition: all 0.4s ease;
+}
+
+.detail .spot_btn2:hover::after {
+  opacity: 1;
+  /* 不透明にする */
+  visibility: visible;
+  /* 表示する */
+  transform: translateX(0);
+  /* 元の定位置に戻す */
+}
+
+.detail .spot_btn3 {
+  position: absolute;
+  top: clamp(800px, 70vw, 1100px);
+  left: 30%;
+}
+
+.detail .spot_btn3::after {
+  content: url(../img/miki_detail.png);
+  position: absolute;
+  top: 2.5rem;
+  left: 100%;
+  opacity: 0;
+  /* 完全に透明にする */
+  visibility: hidden;
+  /* 要素を非表示（クリック等も不可）にする */
+  /* 左に15pxずらしておく */
+  transform: translateX(-5px);
+  transition: all 0.4s ease;
+}
+
+.detail .spot_btn3:hover::after {
+  opacity: 1;
+  /* 不透明にする */
+  visibility: visible;
+  /* 表示する */
+  transform: translateX(0);
+  /* 元の定位置に戻す */
+}
+
+.detail .spot_btn4 {
+  position: absolute;
+  top: clamp(1200px, 95vw, 1400px);
+  left: 25%;
+}
+
+.detail .spot_btn4::after {
+  content: url(../img/ne_detail.png);
+  position: absolute;
+  top: 2.5rem;
+  left: 100%;
+  opacity: 0;
+  /* 完全に透明にする */
+  visibility: hidden;
+  /* 要素を非表示（クリック等も不可）にする */
+  /* 左に15pxずらしておく */
+  transform: translateX(-5px);
+  transition: all 0.4s ease;
+}
+
+.detail .spot_btn4:hover::after {
+  opacity: 1;
+  /* 不透明にする */
+  visibility: visible;
+  /* 表示する */
+  transform: translateX(0);
+  /* 元の定位置に戻す */
+}
+@media screen and (max-width: 1024px) {
+  #ha .modalbox,
+  #eda .modalbox,
+  #miki .modalbox,
+  #ne .modalbox,
+  #moyo .modalbox,
+  #chokkan .modalbox,
+  #kengai .modalbox,
+  #yosegi .modalbox,
+  #ishiduki .modalbox {
+    flex-direction: column;
+  }
+  .kaitai {
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    margin-top: 50px;
+  }
+  #ha .modalbox,
+  #eda .modalbox,
+  #miki .modalbox,
+  #ne .modalbox,
+  #moyo .modalbox,
+  #chokkan .modalbox,
+  #kengai .modalbox,
+  #yosegi .modalbox,
+  #ishiduki .modalbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  .ha_img {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .ha_txt {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .detail .spot_btn1::after,
+  .detail .spot_btn2::after,
+  .detail .spot_btn3::after,
+  .detail .spot_btn4::after {
+    content: none;
+  }
+}
+
+/* =========================================
+   JIN & SHARI
+========================================= */
+.jinshari {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.jinshari_txt {
+  width: 80%;
+  margin-right: 5rem;
+}
+
+.jinshari_txt h3 {
+  margin-bottom: 1rem;
+}
+
+.jinshari .img {
+  display: flex;
+  flex-direction: column;
+}
+
+.jin1 {
+  margin-bottom: 3rem;
+}
+
+.jin2 {
+  margin-left: 20%;
+}
+
+@media screen and (max-width: 1024px) {
+  .jinshari_txt {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+  .jin2 {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .jinshari {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  .jinshari_txt {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .ha_txt {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* =========================================
+    Hachi Slider
+========================================= */
+.hachi {
+  max-width: 1240px;
+  margin: 15rem auto;
+}
+
+.hachi_txt h3 {
+  background-color: #B7282E;
+  width: fit-content;
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: #f4f5f7;
+  margin-bottom: 1rem;
+}
+
+.sliderArea {
+  max-width: 100%;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+.sliderArea.w300 {
+  max-width: 300px;
+}
+
+.slick-slide {
+  margin: 0 5px;
+}
+
+.slick-slide img {
+  width: 100%;
+  height: auto;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+/*====================================================================
+.full-screen
+====================================================================*/
+.full-screen .slick-list {
+  overflow: hidden;
+  cursor: auto;
+}
+
+.full-screen.slider {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hachi .full-screen .slick-slide {
+  margin: 0 10px;
+}
+
+/* =========================================
+   ZUKAN
+========================================= */
+.gallery .slick-slide img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.bunrui {
+  margin-top: 3rem;
+}
+
+.bunrui h2 {
+  margin-bottom: 1rem;
+}
+
+.jumoku,
+.size,
+.jukei {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 5rem 50px 10rem;
+  border: 1px solid #B7282E;
+  background-color: #f4f5f7;
+  border-radius: 25px 25px 0 0;
+}
+
+.jumokubox {
+  margin: 1rem 1.5rem;
+}
+
+.jumokubox li {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid #1a1a1a;
+}
+
+.jumokubox li h3 {
+  font-weight: 600;
+  color: #f4f5f7;
+  width: fit-content;
+  background-color: #B7282E;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.jumokubox li:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+
+.jumoku_txt {
+  width: 50%;
+  margin: 10rem 1rem;
+}
+
+.size,
+.jukei {
+  margin-top: -50px;
+}
+
+.size_detail {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+  z-index: 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1.5rem 1rem;
+  display: block;
+  padding: 1rem;
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 0px 0px 2px 0px #1a1a1a;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+table tr {
+  display: flex;
+}
+
+th,
+td {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 1rem;
+}
+.bonkage {
+  margin-top: 10%;
+}
+.jukeichart {
+  margin: 2rem 1rem;
+  border: 2px solid #1a1a1a;
+  border-radius: 5px;
+  border-color: #dedede;
+  position: relative;
+  height: 700px;
+  z-index: 0;
+}
+
+.jukeichart::before {
+  content: "";
+  position: absolute;
+  background-color: #1a1a1a;
+  width: 80%;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.jukeichart::after {
+  content: "";
+  position: absolute;
+  background-color: #1a1a1a;
+  width: 1px;
+  height: 80%;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.chartname li:first-child {
+  font-weight: 600;
+  color: #f4f5f7;
+  width: fit-content;
+  background-color: #274A78;
+  padding: 0 2rem;
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chartname li:nth-child(2) {
+  font-weight: 600;
+  color: #f4f5f7;
+  width: fit-content;
+  background-color: #274A78;
+  padding: 2rem 0.25rem;
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translate(-50%, -50%);
+}
+
+.chartname li:nth-child(3) {
+  font-weight: 600;
+  color: #f4f5f7;
+  width: fit-content;
+  background-color: #B7282E;
+  padding: 0 2rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chartname li:nth-child(4) {
+  font-weight: 600;
+  color: #f4f5f7;
+  width: fit-content;
+  background-color: #B7282E;
+  padding: 2rem 0.25rem;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translate(-50%, -50%);
+}
+
+.chart li:first-child {
+  position: absolute;
+  top: 70%;
+  left: 10%;
+  transform: translateX(-50%);
+}
+
+.chart li:first-child::after {
+  content: "直幹";
+  background-color: #f4f5f7;
+  padding: 0.5rem;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0px 0px 15px -1px #1a1a1a;
+  border-radius: 5px;
+}
+
+.chart li:nth-child(2) {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chart li:nth-child(2)::after {
+  content: "模様木";
+  background-color: #f4f5f7;
+  padding: 0.5rem;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0px 0px 15px -1px #1a1a1a;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.chart li:nth-child(3) {
+  position: absolute;
+  top: 15%;
+  left: 65%;
+  transform: translateX(-50%);
+}
+
+.chart li:nth-child(3)::after {
+  content: "斜幹";
+  background-color: #f4f5f7;
+  padding: 0.5rem;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0px 0px 15px -1px #1a1a1a;
+  border-radius: 5px;
+}
+
+.chart li:nth-child(4) {
+  position: absolute;
+  top: 10%;
+  left: 125%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.chart li:nth-child(4)::after {
+  content: "懸崖";
+  background-color: #f4f5f7;
+  padding: 0.5rem;
+  font-weight: 600;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0px 0px 15px -1px #1a1a1a;
+  border-radius: 5px;
+}
+
+.chart li:nth-child(5) {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.chart li:nth-child(5)::after {
+  content: "寄せ木";
+  background-color: #f4f5f7;
+  padding: 0.5rem;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0px 0px 15px -1px #1a1a1a;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.chart li:nth-child(6) {
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  transform: translateX(-50%);
+}
+
+.chart li:nth-child(6)::after {
+  content: "石づき";
+  background-color: #f4f5f7;
+  padding: 0.5rem;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  box-shadow: 0px 0px 15px -1px #1a1a1a;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+.chart li:first-child:hover::after,
+.chart li:nth-child(2):hover::after,
+.chart li:nth-child(3):hover::after,
+.chart li:nth-child(4):hover::after,
+.chart li:nth-child(5):hover::after,
+.chart li:nth-child(6):hover::after {
+  opacity: 1;
+  pointer-events: auto;
+}
+.gallery {
+  margin: 200px auto;
+  z-index: 100;
+}
+.gallery .slick-slide img {
+  width: 400px;
+  height: 400px;
+}
+#moyo img,
+#chokkan img,
+#kengai img,
+#yosegi img,
+#ishiduki img {
+  max-width: 400px;
+}
+
+@media screen and (max-width: 960px) {
+.bonkage {
+  margin-top: 20%;
+}
+}
+
+@media screen and (max-width: 767px) {
+.jumokubox {
+  margin: 1rem 0;
+}
+.jumokubox li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+.jumokubox li:nth-child(2n) {
+  flex-direction: column;
+}
+.jumoku_txt {
+  width: 100%;
+  margin: 1rem 0.5rem;
+}
+.bonkage {
+  margin-top: 13rem;
+}
+.chart li img {
+  max-width: 100px;
+}
+}
+
+
+/* =========================================
+   HISTORY
+========================================= */
+.wrap_his {
+  background-color: #dedede;
+  padding-bottom: 15%;
+}
+
+.copy h2 {
+  margin: 10% 0 5% 0;
+}
+
+.lead {
+  display: flex;
+  justify-content: space-between;
+}
+
+.isshou {
+  margin-top: 10%;
+}
+
+.kuromatsu {
+  margin-top: -15%;
+}
+
+@media screen and (max-width: 767px) {
+.lead {
+  display: flex;
+  flex-direction: column;
+}
+.isshou {
+  margin-top: 10%;
+}
+
+.kuromatsu {
+  width: fit-content;
+  margin: 1rem auto;
+}
+}
+/* =========================================
+   Genzou
+========================================= */
+.wrap_history {
+  width: 100%;
+  height: fit-content;
+}
+
+.wrap_genzou {
+  background: linear-gradient(to bottom right, #dce4eb 0%, #f4e8eb 90%);
+  position: sticky;
+  top: -2rem;
+  z-index: 0;
+}
+
+.genzou,
+.mirai {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 10% 0;
+  display: flex;
+  position: relative;
+}
+.wrap_history h3 {
+  text-wrap: nowrap;
+}
+.his_left1::before {
+  content: "1926";
+  color: #f4f5f7;
+  font-size: 200px;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.his_left1::after,
+.his_left2::after,
+.his_left3::after,
+.his_left4::after {
+  content: url(../img/tatesen.png);
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+
+.his_right1 {
+  margin: 0 0 22% 12%;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.his_right1 li {
+  display: flex;
+  margin-bottom: 20%;
+}
+
+.his_right1 h3 {
+  font-weight: 600;
+  margin-right: 10%;
+  white-space: nowrap;
+}
+
+.his_right1 p {
+  white-space: balance;
+  line-height: 2rem;
+}
+
+.his_img1 {
+  position: absolute;
+  top: 1rem;
+  right: 3rem;
+}
+
+.his_img2 {
+  position: absolute;
+  top: 45%;
+  left: 1rem;
+}
+@media screen and (max-width: 767px) {
+.his_right1 {
+  margin: 0 0 22% 12%;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  text-wrap: balance;
+}
+
+.his_right1 li {
+  display: flex;
+  flex-direction: column;
+}
+}
+
+/* =========================================
+   Toshiaki
+========================================= */
+.his_left2::before {
+  content: "1970";
+  color: #f4f5f7;
+  font-size: 200px;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.his_img3 {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 767px) {
+  .his_img3 {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  z-index: -1;
+}
+}
+
+/* =========================================
+   bonsaien
+========================================= */
+.his_left3::before {
+  content: "2015";
+  color: #f4f5f7;
+  font-size: 200px;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.his_img4 {
+  position: absolute;
+  top: 5%;
+  right: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 767px) {
+  .his_img4 {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  z-index: -1;
+}
+}
+
+/* =========================================
+   mirai
+========================================= */
+.wrap_mirai {
+  background: linear-gradient(to bottom right, #dce4eb 0%, #f4e8eb 90%);
+  position: sticky;
+  top: -2rem;
+  z-index: 0;
+  height: 150vh;
+}
+
+.mirai {
+  display: flex;
+  justify-content: center;
+}
+
+.his_left4 h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.his_img5 {
+  position: absolute;
+  top: 30%;
+  right: 20%;
+  z-index: -1;
+}
+@media screen and (max-width: 767px) {
+  .his_img5 {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  z-index: -1;
+}
+}
+
+/* =========================================
+   SPOT
+========================================= */
+.wrap_spot {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.chizu {
+  width: fit-content;
+  margin: clamp(-5rem, -20%, -30rem) auto 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.click {
+  position: absolute;
+  /* Stack over the map perfectly */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.spot_btn1,
+.spot_btn2,
+.spot_btn3,
+.spot_btn4 {
+  /* Using raw proportions instead of rems makes the button scale somewhat with screen size too, or keep fixed */
+  width: clamp(3rem, 5vw, 5rem);
+  height: clamp(3rem, 5vw, 5rem);
+  border: 1px solid #B7282E;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.6);
+  /* optional visibility */
+}
+
+.spot_btn1:hover,
+.spot_btn2:hover,
+.spot_btn3:hover,
+.spot_btn4:hover {
+  background: radial-gradient(#B7282E, transparent 75%);
+}
+
+/* Position relative to .chizu (the map image container) using % */
+.spot_btn1 {
+  /* Saitama */
+  top: 57%;
+  left: 60%;
+}
+
+.spot_btn3 {
+  /* Tokyo */
+  top: 65%;
+  left: 63%;
+}
+
+.spot_btn2 {
+  /* Takamatsu */
+  top: 74%;
+  left: 30%;
+}
+
+.modal {
+  max-width: 1440px;
+  padding: 2rem clamp(1.5rem, 8%, 100px) 1rem clamp(1.5rem, 8%, 100px);
+}
+
+.modal h3 {
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.modal p {
+  margin-bottom: 1rem;
+}
+
+.modal .spots {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5%;
+  margin-bottom: 5%;
+}
+
+.spot1,
+.spot2 {
+  width: 49.5%;
+}
+
+.spot1 img,
+.spot2 img {
+  width: 100%;
+}
+
+.modalbox h3 {
+  margin-bottom: 1rem;
+  background: #B7282E;
+  width: fit-content;
+  padding: 0 1%;
+  color: #f4f5f7;
+  font-weight: 600;
+}
+
+.spots a {
+  text-decoration: underline;
+  color: #202b52;
+}
+@media screen and (max-width: 1024px) {
+  .modal {
+    padding: 2rem clamp(1rem, 6%, 80px) 1rem clamp(1rem, 6%, 80px);
+  }
+  .wrap_alljapan {
+    padding: 0 clamp(1rem, 6%, 80px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chizu {
+    width: 100%;
+    max-width: 100%;
+    margin: -3rem auto 2rem auto;
+    position: relative;
+    z-index: 1;
+  }
+  .modal {
+    padding: 2rem clamp(1rem, 5%, 60px) 1rem clamp(1rem, 5%, 60px);
+  }
+  .modal .spots {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5%;
+    margin-bottom: 5%;
+  }
+  .spot1,
+  .spot2 {
+    width: 100%;
+  }
+  .spot1 {
+    margin-bottom: 5rem;
+  }
+  .wrap_alljapan {
+    padding: 0 clamp(1rem, 5%, 60px);
+  }
+}
+
+/* =========================================
+   ALL JAPAN
+========================================= */
+.wrap_alljapan {
+  max-width: 1200px;
+  margin: 10% auto;
+  padding: 0 clamp(1.5rem, 8%, 100px);
+}
+
+.wrap_alljapan h3 {
+  font-weight: 600;
+  margin-bottom: 1%;
+  letter-spacing: 15%;
+}
+
+/*====================================================================
+.s_01 .accordion_one
+====================================================================*/
+.s_01 .accordion_one {
+  max-width: 1200px;
+  margin: 0.5% auto;
+}
+
+.s_01 .accordion_one .accordion_header {
+  background-color: #f4f5f7;
+  padding: 20px 5%;
+  text-align: center;
+  position: relative;
+  z-index: +1;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.s_01 .accordion_one .accordion_header:hover {
+  opacity: .8;
+}
+
+.s_01 .accordion_one .accordion_header .i_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #1a1a1a;
+  margin-top: -20px;
+  box-sizing: border-box;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transform-origin: center center;
+  transition-duration: 0.2s;
+}
+
+.s_01 .accordion_one .accordion_header .i_box .one_i {
+  display: block;
+  width: 18px;
+  height: 18px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transform-origin: center center;
+  transition-duration: 0.2s;
+  position: relative;
+}
+
+.s_01 .accordion_one .accordion_header.open .i_box {
+  -webkit-transform: rotate(-360deg);
+  transform: rotate(-360deg);
+}
+
+.s_01 .accordion_one .accordion_header .i_box .one_i:before,
+.s_01 .accordion_one .accordion_header .i_box .one_i:after {
+  display: flex;
+  content: '';
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  width: 18px;
+  height: 4px;
+  position: absolute;
+  top: 7px;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transform-origin: center center;
+}
+
+.s_01 .accordion_one .accordion_header .i_box .one_i:before {
+  width: 4px;
+  height: 18px;
+  top: 0;
+  left: 7px;
+}
+
+.s_01 .accordion_one .accordion_header.open .i_box .one_i:before {
+  content: none;
+}
+
+.s_01 .accordion_one .accordion_header.open .i_box .one_i:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.s_01 .accordion_one .accordion_inner {
+  display: none;
+  padding: 30px 30px;
+  border-left: 2px solid #f4f5f7;
+  border-right: 2px solid #f4f5f7;
+  border-bottom: 2px solid #f4f5f7;
+  box-sizing: border-box;
+}
+
+.s_01 .accordion_one .accordion_inner p.txt_a_ac {
+  margin: 0;
+}
+
+.box_one li {
+  list-style: inside;
+  margin-bottom: 1rem;
+}
+
+.txt_a_ac a {
+  text-decoration: underline;
+}
+
+.txt_a_ac a:hover {
+  color: #202b52;
+}
+
+.material-symbols-outlined {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .s_01 .accordion_one .accordion_header {
+    font-size: 16px;
+    text-align: left;
+    padding: 15px 60px 15px 15px;
+  }
+}
+/* =========================================
+   SHINDAN
+========================================= */
+.shindan_body {
+  background: linear-gradient(180deg, #dce4eb 0%, #f4e8eb 50%, #dce4eb 100%);
+}
+
+.shindan_body .txt {
+  text-align: center;
+}
+
+.shindan_body button:hover {
+  box-shadow: 0px 0px 4px -1px #202b52;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+.wrap {
+  max-width: 1000px;
+  height: 650px;
+  margin: 2% auto;
+  border: 1px solid #1a1a1a;
+  border-radius: 10px;
+  background-color: #f4f5f7;
+  padding: 3rem 0;
+}
+
+.title-wrap {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.title-wrap h2 {
+  background-color: #B7282E;
+  color: #f4f5f7;
+  padding: 0.1rem 1.5rem;
+}
+
+.title-wrap p {
+  text-align: center;
+  margin-top: 1rem;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 0.5rem;
+}
+
+.diagnose-wrap {
+  width: fit-content;
+  margin: 3rem auto 0;
+}
+
+.start-btn {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.start-btn::after {
+  background: linear-gradient(90deg, #b02a2d 20%, #202b52 120%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: .4s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: -1;
+}
+
+.start-btn:hover {
+  color: #f4f4f4;
+}
+
+.start-btn:hover::after {
+  transform: scale(1, 1);
+}
+
+.tool-btn {
+  border: 1px solid #1a1a1a;
+  border-radius: 100px;
+  padding: 2rem 15rem;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 15%;
+  margin-top: 20%;
+}
+
+#q1 {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.title p {
+  text-align: center;
+}
+
+.select-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.yes {
+  border: 1px solid #B7282E;
+  border-radius: 100px;
+  padding: 1.5rem 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.no {
+  border: 1px solid #202b52;
+  border-radius: 100px;
+  padding: 1.5rem 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.vague {
+  border: 1px solid #1a1a1a;
+  border-radius: 100px;
+  padding: 1.5rem 5rem;
+}
+
+.bonsai_dna {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 3rem 0;
+  line-height: 250%;
+}
+
+.finish {
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  width: 70%;
+  margin: 1rem auto;
+  padding: 0.5rem 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.shousai {
+  border: 1px solid #B7282E;
+  border-radius: 100px;
+  width: 70%;
+  margin: 1rem auto 0;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.shousai:hover {
+  box-shadow: 0px 0px 4px -1px #202b52;
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+
+/* =========================================
+   MODAL Z-INDEX FIX
+========================================= */
+.blocker {
+  z-index: 9999 !important;
+}
+
+
+
+
+
+
+
+
