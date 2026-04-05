@@ -326,9 +326,9 @@ footer {
 footer img{
     max-width: 100px;
     position: absolute;
-    top: 0;
-    right: 10%;
-    transform: translateY(-50%);
+    top: -25%;
+    right: 20%;
+    transform: translate(50%, -50%);
 }
 
 /* ==============================================-
