@@ -9,7 +9,6 @@ html {
 }
 
 body {
-    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #2D3748;
     text-shadow: 0.1px 0.1px 0.5px rgba(50, 50, 50, 0.2);
     background-color: #F4f5f7;
@@ -57,7 +56,7 @@ h1 {
 h2 {
     font-family: "Montserrat", sans-serif;
     font-size: clamp(1.5rem, 1.429rem + 2.86vw, 4rem);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
 }
@@ -65,7 +64,7 @@ h2 {
 h3 {
     font-family: "Montserrat", sans-serif;
     font-size: clamp(1rem, 0.857rem + 2.86vw, 2rem);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
 }
@@ -74,7 +73,7 @@ p {
     font-size: clamp(0.6rem, 0.429rem + 1.43vw, 1rem);
     letter-spacing: 0.02em;
     line-height: 1.5em;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .wrap {
