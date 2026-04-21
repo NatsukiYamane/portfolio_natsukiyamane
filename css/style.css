@@ -202,19 +202,22 @@ nav ul {
 }
 
 @media (max-width: 768px) {
-    .container_btn .btn{
+    .container_btn .btn {
         margin-bottom: 1rem;
     }
-    .logo h2{
+
+    .logo h2 {
         font-size: 1.5rem;
     }
+
     nav ul {
-    gap: 1rem;
-    font-size: 0.8rem;
-}
-.back-to-top {
-    display: none;
-}
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .back-to-top {
+        display: none;
+    }
 }
 
 /* ==============================================-
@@ -297,9 +300,10 @@ nav ul {
     padding-top: 1rem;
 }
 
-.intro_img img{
+.intro_img img {
     max-width: 300px;
 }
+
 .myname {
     display: flex;
     align-items: baseline;
@@ -322,7 +326,8 @@ footer {
     padding-bottom: 1rem;
     position: relative;
 }
-footer img{
+
+footer img {
     max-width: 100px;
     position: absolute;
     top: -25%;
@@ -344,39 +349,46 @@ footer img{
     padding: 10% 5%;
     color: #F0F4F8;
 }
+
 .about_top img {
     max-width: 30%;
 }
-.about_detail_name span{
+
+.about_detail_name span {
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     margin-left: 1rem;
 }
-.about_detail_name p{
+
+.about_detail_name p {
     margin-top: 1rem;
 }
-.skill_list{
+
+.skill_list {
     display: flex;
     align-items: center;
     gap: 2rem;
     margin-top: 1rem;
 }
-.skill_list img{
+
+.skill_list img {
     max-width: 35px;
 }
 
 @media (max-width: 768px) {
-    .about_top{
+    .about_top {
         flex-direction: column;
         gap: 0;
         margin: 1rem 0;
         padding-bottom: 2rem;
     }
-    .about_top img{
+
+    .about_top img {
         max-width: 50%;
     }
-    .skill_list{
+
+    .skill_list {
         flex-wrap: wrap;
     }
 }
@@ -388,11 +400,13 @@ footer img{
 .work_graphics {
     margin-top: 3rem;
 }
-.work_top{
+
+.work_top {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .work_top a {
     font-size: 1.2rem;
     font-weight: 600;
@@ -447,6 +461,10 @@ footer img{
     font-weight: 600;
 }
 
+.work_data_content {
+    display: block;
+}
+
 .work_description span {
     font-weight: 600;
     margin: 5rem 0 1rem;
@@ -460,28 +478,42 @@ footer img{
     border-left: 1px solid #2D3748;
 }
 
+.work_description ul li {
+    list-style: inside nu;
+}
+
+.work_description ul li p {
+    margin-bottom: 1rem;
+    border: none;
+}
+
 .others .products_card a {
     width: calc((100% - 3rem) / 4);
 }
 
 @media (max-width: 768px) {
-    .work_top{
+    .work_top {
         flex-direction: column;
         align-items: flex-start;
     }
-    .work_top a{
+
+    .work_top a {
         margin-top: 3rem;
     }
-    .work_data_container{
+
+    .work_data_container {
         flex-direction: column;
     }
-    .work_data_left{
+
+    .work_data_left {
         width: 100%;
     }
-    .work_data_right{
+
+    .work_data_right {
         width: 100%;
     }
-    .others .products_card a{
+
+    .others .products_card a {
         width: calc((100% - 1rem) / 2);
     }
 }
@@ -543,21 +575,25 @@ footer img{
     flex-direction: column;
     margin-top: 3rem;
 }
+
 .work_description_graphics p {
     margin: 3rem 0;
     padding-left: 1rem;
     border-left: 1px solid #2D3748;
 }
+
 .data_graphics {
     margin: 0;
     display: flex;
     gap: 0.5rem;
 }
+
 .data_graphics span {
     margin: 0;
     font-weight: 500;
     font-size: clamp(0.6rem, 0.714rem + 1.43vw, 0.8rem);
 }
+
 .data_graphics p {
     margin-bottom: 0.5rem;
     font-weight: 400;
@@ -636,9 +672,11 @@ footer img{
     gap: 3rem;
     align-items: center;
 }
+
 .work_graphics_wine_img {
     max-width: 45%;
 }
+
 .work_graphics_wine img {
     display: flex;
     flex-direction: column;
@@ -651,6 +689,7 @@ footer img{
     gap: 0.5rem;
     flex-wrap: wrap;
 }
+
 .work_graphics_wine_img_under img {
     width: calc((100% - 1rem) / 3);
     margin-top: 0.5rem;
@@ -661,19 +700,24 @@ footer img{
     #work_graphics_ishiten {
         flex-direction: column;
     }
+
     .work_graphics_ishiten_img {
         width: 80%;
     }
+
     .work_detail_poster {
         flex-direction: column;
     }
+
     .work_detail_poster .slider-img {
         width: 100%;
     }
+
     #work_graphics_wine {
         flex-direction: column;
         gap: 0;
     }
+
     .work_graphics_wine_img {
         max-width: 100%;
     }
